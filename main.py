@@ -12,6 +12,9 @@ play_height = 600 #20 blocks of 20 height
 
 block_size = 30
 
+top_left_x = (screen_width - play_width) // 2
+top_left_y =  screen_height - play_height
+
 # All Block Shapes
 S = [['.....',
       '......',
@@ -138,3 +141,12 @@ def create_grid(locked_pos = {}):
 
 def get_shape():
     return random.choice(shapes)
+
+def draw_grid(surface):
+    surface.fill((0,0,0))
+
+    pygame.font.init()
+    font = pygame.font.SysFont('arial', 60)
+    label  = font.render('Tetris', 1, (255,255,255))
+
+    surface.blit(label, )
